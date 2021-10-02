@@ -57,7 +57,7 @@
                                         <tr>
                                             <td>{{$datum->id}}</td>
                                             <td><a href="{{route('posts.edit',['id'=>$datum->id])}}">{{$datum->title}}</a></td>
-                                            <td class="text-bold-500">{{$datum->slug}}</td>
+                                            <td class="text-bold-500">{{$datum->category->name}}</td>
                                             <td>{{$datum->status_label}}</td>
                                             <td class="text-bold-500">{{date('d-m-Y',strtotime($datum->created_at))}}
                                             </td>

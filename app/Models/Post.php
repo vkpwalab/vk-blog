@@ -17,10 +17,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $slug
  * @property int $category_id
  * @property string $description
- * @property string $image
+ * @property string|null $image
  * @property int $status
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ *
+ * @property Category $category
  *
  * @package App\Models
  */
@@ -41,6 +43,11 @@ class Post extends Model
 		'image',
 		'status'
 	];
+
+	public function category()
+	{
+		return $this->belongsTo(Category::class);
+	}
 
     public function getStatusLabelAttribute()
     {
